@@ -23,7 +23,7 @@ export function registerUser(dataToSubmit){
 }
 
 export function loginUser(dataToSubmit){
-    const request = axios.post(`${USER_SERVER}/login`,dataToSubmit)   
+    const request = axios.post(`${USER_SERVER}/login`,dataToSubmit, { withCredentials: true })   
                 .then(response => response.data);
 
     return {
@@ -33,7 +33,7 @@ export function loginUser(dataToSubmit){
 }
 
 export function auth(){
-    const request = axios.get(`${USER_SERVER}/auth`) 
+    const request = axios.get(`${USER_SERVER}/auth`, { withCredentials: true }) 
     .then(response => response.data);
 
     return {
@@ -43,7 +43,7 @@ export function auth(){
 }
 
 export function logoutUser(){
-    const request = axios.get(`${USER_SERVER}/logout`)  
+    const request = axios.get(`${USER_SERVER}/logout`, { withCredentials: true })  
     .then(response => response.data);
 
     return {
@@ -96,7 +96,7 @@ export function getCartItems(cartItems,userCart){
 }
 export function removeCartItem(productId){
 
-    const request = axios.get(`https://bensmenu.herokuapp.com/api/users/removeFromCart?id=${productId}`)   //,{withCredentials:true}
+    const request = axios.get(`https://bensmenu.herokuapp.com/api/users/removeFromCart?id=${productId}`, { withCredentials: true })   //,{withCredentials:true}
     .then(response => {
         //routes/user.js에서 request받아와서
         
@@ -120,7 +120,7 @@ export function removeCartItem(productId){
 //CartPage 에서 dispatch한 두개 paymentData 와 cartDetail 을 data로받기,//end point와 data
    //3)request를 받아 reducer.js로 가기
 export function onSuccessBuy(data){    
-    const request = axios.post(`https://bensmenu.herokuapp.com/api/users/successBuy`,data)      //,{withCredentials:true}
+    const request = axios.post(`https://bensmenu.herokuapp.com/api/users/successBuy`,data, { withCredentials: true })      //,{withCredentials:true}
     .then(response => response.data );
      
     return {
