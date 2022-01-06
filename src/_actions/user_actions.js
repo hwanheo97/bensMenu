@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { USER_SERVER } from '../components/Config.js';
 import {
     LOGIN_USER,
     REGISTER_USER,
@@ -9,7 +10,7 @@ import {
     REMOVE_CART_ITEM,
     ON_SUCCESS_BUY
 } from './types';
-import { USER_SERVER } from '../components/Config.js';
+
 //import { response } from 'express';  
 
 export function registerUser(dataToSubmit){

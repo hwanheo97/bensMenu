@@ -15,8 +15,9 @@ import HistoryPage from './views/HistoryPage/HistoryPage';
 
 //step 2 UloadPage Router 만들기
 //null   Anyone Can go inside
-//true   only logged in user can go inside
+//true   only logged in user can go inside, 업로드 할 수 있게, 아니면 false
 //false  logged in user can't go inside
+// 세번째 인자 true 경우 admin만 가능
 
 function App() {
   return (

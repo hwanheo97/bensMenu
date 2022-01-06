@@ -12,6 +12,7 @@ export default function (SpecificComponent, option, adminRoute = null) {
         useEffect(() => {
             //To know my current status, send Auth request 
             dispatch(auth()).then(response => {
+                console.log('hoc/auth 결과: ' , response);
                 //Not Loggined in Status 
                 if (!response.payload.isAuth) {
                     if (option) {
